@@ -1,5 +1,5 @@
 import os
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -10,7 +10,7 @@ app.config.update(
 
 @app.route("/")
 def hello():
-	return "Hello world!"
+	return render_template('base.html')
 
 
 #-------------------
