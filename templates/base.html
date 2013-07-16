@@ -1,10 +1,99 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>based.</title>
-	</head>
+<html lang="en">
+  <head>
+    {% block head %}
+    <title>DOOM.{% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta charset="utf-8"> -->
 
-	<body>
-		<p>DOOM, MASTER OF THE WORLD</p>
-	</body>
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+    <style> body { padding-top: 60px; } </style>
+    <link href="static/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="static/css/style.css" rel="stylesheet">
+
+    <!-- SUPPORT FOR IE6-8 OF HTML5 ELEMENTS -->
+    <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+
+<!--    <link rel="shortcut icon" href="{{ url_for('static', filename='ico/favicon.ico') }}"> -->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    {% endblock %}
+  </head>
+
+  <body>
+
+    {% block navbar %}
+    <div class="navbar navbar-fixed-top navbar-inverse">
+        <div class="navbar-inner">
+            <div class="container">
+<!--          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </a>-->
+              <a class="brand" href="{{ url_for('index') }}">DOOM.</a>
+              <ul class="nav">
+              	<li class="dropdown">
+              	<a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown</a>
+              	<ul class="dropdown-menu">
+              		<li><a href="#">Second link</a></li>
+              		<li><a href-"#">Lil B</a></li>
+              		<li class="divider"></li>
+              		<li><a href="#">MF</a></li>
+              	</ul>
+              	</li>
+              	<li><a href="#">What</a></li>
+              	<li><a href="#">The</a></li>
+              	<li><a href="#">Fuck</a></li>
+              	<li class="dropdown">
+              		<a class="dropdown-toggle" data-toggle="dropdown" href="#">Should</a>
+          			<ul class="dropdown-menu">
+          				<li><a href="#">I</a></li>
+          				<li><a href="#">Do</a></li>
+          				<li><a href="#">With</a></li>
+          				<li><a href="#">This</a></li>
+          				<li><a href="#">Website</a></li>
+          			</ul>
+          		</li>
+              </ul>
+
+              <div class="nav-collapse">
+                <ul class="nav">
+                </ul>
+                {% block navbar_right %}
+                <ul class="nav pull-right">
+                  
+                </ul>
+                {% endblock %}
+              </div><!--/.nav-collapse -->
+            </div>
+          </div>
+    </div>
+    {% endblock %}
+
+    <div class="container page">
+        <div class="content">
+          {% block content %}
+          
+          {% endblock %}
+        </div>
+
+        <hr>
+
+        {% block footer %}
+        <footer class="footer">
+            <p>&copy; anthonysea</p>
+        </footer>
+        {% endblock %}
+
+    </div>
+    {% block js_footer %}
+      <script src="static/js/bootstrap.js"></script>
+    {% endblock %}
+  </body>
 </html>

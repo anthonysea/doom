@@ -13,7 +13,11 @@ def favicon():
 	return send_from_directory(os.path.join(app.root_path, 'static'), 'ico/favicon.ico')
 
 @app.route("/")
-def hello():
+def index():
+	return render_template('index.html')
+
+@app.route("/mfdoom")
+def aboutMF():
 	return render_template('base.html')
 
 
